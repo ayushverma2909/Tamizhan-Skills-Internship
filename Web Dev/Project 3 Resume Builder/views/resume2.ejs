@@ -15,7 +15,9 @@
 
       <div class="leftPanel">
         
-        <img src="<%= data?.photo || '/avatar.png' %>" alt="image" />
+        <% if (data.photo) { %>
+          <img src="<%= data.photo %>" alt="User Photo" style="max-width: 150px;">
+        <% } %>
 
         <div class="details">
           
