@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./public/uploads/");
+    cb(null, "/tmp");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1E9);
@@ -49,7 +49,8 @@ app.post("/generate",upload.single("photo"), (req, res) => {
   const data = req.body;
 
   if (req.file) {
-    data.photo = "/uploads/" + req.file.filename;
+    data.photo = "/tmp/" + req.file.filename;
+
   }
 
   if (data.template === "1") {
@@ -58,6 +59,11 @@ app.post("/generate",upload.single("photo"), (req, res) => {
     res.render("resume2", { data, downloadMode: true });
   }
   // console.log(data.template)
+});
+
+app.use((err, req, res, next) => {
+  console.error("🔥 Server Error:", err);
+  res.status(500).send("Something broke!");
 });
 
 
