@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --purple-dark: #5a0fd4;
+  --purple-light: #8c63f7;
+  --gray-light: #f0f2ff;
+  --gray-dark: #3a3a3a;
+  --white: #fff;
+  --shadow: rgba(90, 15, 212, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  color: var(--gray-dark);
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.btn {
+  display: inline-block;
+  background: var(--purple-dark);
+  color: var(--white);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 15px var(--shadow);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--purple-light);
+  box-shadow: 0 12px 20px var(--shadow);
+  outline: none;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: var(--purple-dark);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+}

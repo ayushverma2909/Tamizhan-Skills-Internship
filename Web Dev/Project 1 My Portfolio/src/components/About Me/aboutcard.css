@@ -1,0 +1,38 @@
+.about-card-content{
+    width: 100%;
+    display: flex;
+}
+
+.about-section {
+  position: relative !important;
+  padding: 150px 50px 30px 50px !important;
+}
+
+.about-img{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-card-view>div>ul>li{
+    display: flex;
+    flex-direction: row;
+}
+
+.quote-card-view>div>ul{
+    margin-left: 5%;
+    margin-bottom: 15px;
+}
+
+@media(max-width: 768px){
+    .about-card-content{
+        flex-direction: column;
+    }
+
+    .about-img{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        height: 400px;
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/resume1.css">
+  <title>Resume</title>
+</head>
+<body>
+  <div class="pdf-page">
+    <div class="container">
+      <div class="header">
+        <div class="full-name">
+          <span class="first-name"><%= data?.firstName || "John" %></span>
+          <span class="last-name"><%= data?.lastName || "Doe" %></span>
+        </div>
+        <div class="contact-info">
+          <span class="email">Email: <%= data?.email || "john@example.com" %></span>
+          <span class="separator"> | </span>
+          <span class="phone">Phone: <%= data?.phone || "1234567890" %></span>
+          <% if (data?.linkedin) { %>
+            <span class="separator"> | </span>
+            <span class="linkedin">LinkedIn: <%= data.linkedin %></span>
+          <% } %>
+          <% if (data?.residence) { %>
+            <span class="separator"> | </span>
+            <span class="residence">Location: <%= data.residence %></span>
+          <% } %>
+        </div>
+        <div class="about">
+          <div class="section__title">About</div>
+          <span class="position"><%= data?.position || "Web Developer" %></span>
+          <div class="desc"><%= data?.about || "A passionate developer..." %></div>
+        </div>
+      </div>
+
+      <div class="details">
+        
+        <% if (data?.experience && data.experience.length > 0) { %>
+          <div class="section">
+            <div class="section__title">Experience</div>
+            <div class="section__list">
+              <% data.experience.forEach(exp => { %>
+                <div class="section__list-item">
+                  <div class="left">
+                    <div class="name"><%= exp.expCompany %></div>
+                    <div class="addr"><%= exp.expLocation %></div>
+                    <div class="duration"><%= exp.expDuration %></div>
+                  </div>
+                  <div class="right">
+                    <div class="name"><%= exp.expRole %></div>
+                    <div class="desc"><%= exp.expDescription %></div>
+                    <% if (exp.points) { %>
+                      <ul>
+                        <% exp.points.split(',').forEach(pt => { %>
+                          <li><%= pt.trim() %></li>
+                        <% }); %>
+                      </ul>
+                    <% } %>
+                    <% if (exp.expSkills) { %>
+                      <div><strong>Skills:</strong> <%= exp.expSkills %></div>
+                    <% } %>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          </div>
+        <% } %>
+
+        
+        <% if (data?.education && data.education.length > 0) { %>
+          <div class="section">
+            <div class="section__title">Education</div>
+            <div class="section__list">
+              <% data.education.forEach(edu => { %>
+                <div class="section__list-item">
+                  <div class="left">
+                    <div class="name"><%= edu.institute %></div>
+                    <div class="duration"><%= edu.duration %></div>
+                  </div>
+                  <div class="right">
+                    <div class="name"><%= edu.degree %></div>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          </div>
+        <% } %>
+
+        
+        <% if (data?.projects && data.projects.length > 0) { %>
+          <div class="section">
+            <div class="section__title">Projects</div>
+            <div class="section__list">
+              <% data.projects.forEach(proj => { %>
+                <div class="section__list-item">
+                  <div class="name"><%= proj.projectName %></div>
+                  <div class="text"><%= proj.projectDescription %></div>
+                </div>
+              <% }); %>
+            </div>
+          </div>
+        <% } %>
+
+        
+        <% if (data?.skills) { %>
+          <div class="section">
+            <div class="section__title">Skills</div>
+            <div class="section__list-item">
+              <% data.skills.split(',').forEach(skill => { %>
+                <span class="skill"><%= skill.trim() %></span>
+              <% }); %>
+            </div>
+          </div>
+        <% } %>
+
+        
+        <% if (data?.interests) { %>
+          <div class="section">
+            <div class="section__title">Interests</div>
+            <div class="section__list-item">
+              <% data.interests.split(',').forEach(interest => { %>
+                <span class="interest"><%= interest.trim() %></span>
+              <% }); %>
+            </div>
+          </div>
+        <% } %>
+
+      </div>
+    </div>
+  </div>
+
+  <% if (downloadMode) { %>
+    <button id="downloadBtn">Download as PDF</button>
+  <% } %>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        const element = document.querySelector(".pdf-page");
+        html2pdf().set({
+          margin: 0,
+          filename: 'resume.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 4 },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        }).from(element).save();
+      });
+    }
+  </script>
+</body>
+</html>

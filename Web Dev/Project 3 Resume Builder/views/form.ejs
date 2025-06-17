@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder - Form</title>
+  <link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Fill Your Resume Details</h1>
+    <form action="/generate" method="POST">
+
+      <label>First Name:</label>
+      <input type="text" name="firstName" required>
+
+      <label>Last Name:</label>
+      <input type="text" name="lastName" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Phone:</label>
+      <input type="text" name="phone" required>
+
+      <label>Position:</label>
+      <input type="text" name="position" required>
+
+      <label>About You:</label>
+      <textarea name="about" rows="4" required></textarea>
+
+      <h3>Experience</h3>
+
+        <label>Company:</label>
+        <input type="text" name="expCompany" required>
+
+        <label>Location:</label>
+        <input type="text" name="expLocation" required>
+
+        <label>Duration:</label>
+        <input type="text" name="expDuration" placeholder="e.g. Jan 2020 - Dec 2023" required>
+
+        <label>Role:</label>
+        <input type="text" name="expRole" required>
+
+        <label>Description:</label>
+        <textarea name="expDescription" rows="3" required></textarea>
+
+
+      <h3>Education</h3>
+
+        <label>Institute:</label>
+        <input type="text" name="eduInstitute" required>
+
+        <label>Location:</label>
+        <input type="text" name="eduLocation" required>
+
+        <label>Duration:</label>
+        <input type="text" name="eduDuration" required>
+
+        <label>Degree:</label>
+        <input type="text" name="eduDegree" required>
+
+        <label>Description:</label>
+        <textarea name="eduDescription" rows="3" required></textarea>
+
+
+<h3>Projects</h3>
+
+<label>Project Name:</label>
+<input type="text" name="projectName" required>
+
+<label>Description:</label>
+<textarea name="projectDescription" rows="3" required></textarea>
+
+
+      <label>Skills (comma-separated):</label>
+      <input type="text" name="skills" placeholder="HTML, CSS, JavaScript" required>
+
+      <label>Interests (comma-separated):</label>
+      <input type="text" name="interests" required>
+
+      <input type="hidden" name="template" value="<%= template %>">
+      <button type="submit">Generate Resume</button>
+    </form>
+  </div>
+</body>
+</html>

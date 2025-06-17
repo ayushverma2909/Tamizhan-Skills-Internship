@@ -1,0 +1,158 @@
+.pricing {
+  background-color: var(--gray-light);
+  padding: 80px 20px;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.billingToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: var(--purple-dark);
+  user-select: none;
+}
+
+.billingToggle span {
+  font-size: 1.1rem;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.billingToggle span.active {
+  color: var(--purple-dark);
+}
+
+/* Switch style from W3School, customized */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--white);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--purple-dark);
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 25px;
+  width: 320px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 25px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:focus,
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px var(--shadow);
+  outline: none;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: var(--purple-dark);
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--purple-dark);
+}
+
+.currency {
+  font-size: 1.8rem;
+  vertical-align: top;
+  margin-right: 3px;
+}
+
+.period {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #777;
+  margin-left: 4px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  flex-grow: 1;
+  margin-bottom: 35px;
+  color: #444;
+}
+
+.features li {
+  margin-bottom: 14px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--purple-dark);
+  font-weight: 700;
+}
+
+button.btn {
+  align-self: center;
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

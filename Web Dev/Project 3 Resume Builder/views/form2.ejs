@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Resume Builder - Step Form</title>
+    <link rel="stylesheet" href="/css/form2.css">
+
+    <style>
+      .step { display: none; }
+      .step.active { display: block; }
+      .multi-group {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      button.add-more {
+        background: #6c63ff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h1>Build Your Resume</h1>
+
+      <form action="/generate" method="POST" enctype="multipart/form-data" novalidate>
+        
+        <input type="hidden" name="template" id="template" value="<%= locals.data?.template %>">
+
+
+        <div class="step active" id="step-1">
+          <h3>Personal Info</h3>
+          <label>First Name:</label><input type="text" name="firstName" required>
+          <label>Last Name:</label><input type="text" name="lastName" required>
+          <label>Email:</label><input type="email" name="email" required>
+          <label>Phone:</label><input type="text" name="phone" required>
+          <label>LinkedIn:</label><input type="text" name="linkedin">
+          <label>Residence:</label><input type="text" name="residence" required>
+          <label>Position:</label><input type="text" name="position" required>
+          <label>About You:</label><textarea name="about" required></textarea>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="step" id="step-2">
+          <h3>Step 2: Education</h3>
+          <div id="education-section"></div>
+          <button type="button" class="add-more" onclick="addEducation()">Add More Education</button><br>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="step" id="step-3">
+          <h3>Step 3: Experience</h3>
+          <div id="experience-section"></div>
+          <button type="button" class="add-more" onclick="addExperience()">Add More Experience</button><br>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="step" id="step-4">
+          <h3>Step 4: Projects</h3>
+          <div id="project-section"></div>
+          <button type="button" class="add-more" onclick="addProject()">Add More Project</button><br>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="button" onclick="nextStep()">Next</button>
+        </div>
+
+
+        <div class="step" id="step-5">
+          <h3>Step 5: Skills & Interests</h3>
+          <label>Skills (comma-separated):</label>
+          <input type="text" name="skills" required>
+          <label>Interests (comma-separated):</label>
+          <input type="text" name="interests" required>
+          <br>
+          <div id="photoUpload" style="display: none;">
+            <label for="photo">Upload Photo</label>
+            <input type="file" name="photo" id="photo" accept="image/*" />
+          </div>
+          <br>
+          <button type="button" onclick="prevStep()">Back</button>
+          <button type="submit">Generate Resume</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let currentStep = 1;
+
+      function nextStep() {
+        document.getElementById(`step-${currentStep}`).classList.remove("active");
+        currentStep++;
+        document.getElementById(`step-${currentStep}`).classList.add("active");
+      }
+
+      function prevStep() {
+        document.getElementById(`step-${currentStep}`).classList.remove("active");
+        currentStep--;
+        document.getElementById(`step-${currentStep}`).classList.add("active");
+      }
+
+      let eduCount = 0;
+      let expCount = 0;
+      let projCount = 0;
+
+      function addEducation() {
+        const section = document.getElementById("education-section");
+        const div = document.createElement("div");
+        div.className = "multi-group";
+        div.innerHTML = `
+          <label>Degree:</label><input type="text" name="education[${eduCount}][degree]" required>
+          <label>Institute:</label><input type="text" name="education[${eduCount}][institute]" required>
+          <label>Duration:</label><input type="text" name="education[${eduCount}][duration]" required>
+        `;
+        section.appendChild(div);
+        eduCount++;
+      }
+
+      function addExperience() {
+        const section = document.getElementById("experience-section");
+        const div = document.createElement("div");
+        div.className = "multi-group";
+        div.innerHTML = `
+          <label>Company:</label><input type="text" name="experience[${expCount}][expCompany]" required>
+          <label>Location:</label><input type="text" name="experience[${expCount}][expLocation]" required>
+          <label>Duration:</label><input type="text" name="experience[${expCount}][expDuration]" required>
+          <label>Role:</label><input type="text" name="experience[${expCount}][expRole]" required>
+          <label>Description:</label><textarea name="experience[${expCount}][expDescription]" required></textarea>
+          <label>Key Points (comma-separated):</label><input type="text" name="experience[${expCount}][points]">
+          <label>Skills Used:</label><input type="text" name="experience[${expCount}][expSkills]">
+        `;
+        section.appendChild(div);
+        expCount++;
+      }
+
+      function addProject() {
+        const section = document.getElementById("project-section");
+        const div = document.createElement("div");
+        div.className = "multi-group";
+        div.innerHTML = `
+          <label>Project Name:</label><input type="text" name="projects[${projCount}][projectName]" required>
+          <label>Description:</label><textarea name="projects[${projCount}][projectDescription]" required></textarea>
+        `;
+        section.appendChild(div);
+        projCount++;
+      }
+
+      window.onload = () => {
+        addEducation();
+        addExperience();
+        addProject();
+
+        const templateSelect = document.getElementById("template");
+        const photoUpload = document.getElementById("photoUpload");
+
+        const templateValue = templateSelect?.value || "1";
+        photoUpload.style.display = templateValue === "2" ? "block" : "none";
+      };
+
+
+    </script>
+  </body>
+
+</html>
