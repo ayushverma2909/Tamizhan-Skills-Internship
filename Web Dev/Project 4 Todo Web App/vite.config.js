@@ -6,24 +6,33 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico'],
-      manifest: {
-        name: 'My Offline Todo App',
-        short_name: 'ToDo',
-        description: 'A React-based offline todo app with edit and filters.',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
-        display: 'standalone',
-        start_url: '/',
-        icons: [
-          {
-            src: 'favicon.ico',
-            sizes: '64x64 32x32 24x24 16x16',
-            type: 'image/x-icon'
-          }
-        ]
+  registerType: 'autoUpdate',
+  includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+  workbox: {
+    globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+  },
+  manifest: {
+    name: 'ToDo App',
+    short_name: 'ToDo',
+    description: 'Offline-capable ToDo app',
+    theme_color: '#ffffff',
+    background_color: '#ffffff',
+    display: 'standalone',
+    start_url: '/',
+    icons: [
+      {
+        src: 'pwa-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: 'pwa-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
       }
-    })
+    ]
+  }
+})
+
   ]
 });

@@ -1,0 +1,4 @@
+[build]
+  base = "Web Dev/Project 4 Todo Web App"
+  publish = "dist"
+  command = "npm run build"
