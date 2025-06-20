@@ -1,0 +1,204 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  background-color: beige;
+}
+
+/* header section */
+
+.header {
+  height: 4rem;
+  background-color: #f5ba13;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  color: white;
+  font-weight: 600;
+  justify-content: space-between;
+}
+
+.selectTask{
+  margin-top: 5px;
+}
+
+@media (max-width: 450px) {
+  .header {
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* INPUT SECTIION */
+
+.inputText {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+@media (max-width: 500px) {
+  .inputText {
+    width: 80%;
+  }
+}
+
+.inputText > input,
+textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+.inputText > input {
+  font-weight: 700;
+}
+
+.SubmitText {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  color: #f5ba13;
+}
+.SubmitText:hover {
+  color: #c79712;
+}
+.SubmitText:active {
+  color: #f5ba13;
+  width: 38px;
+  height: 38px;
+}
+
+.cardWrapper {
+  column-count: 4;
+  column-gap: 16px;
+  padding: 20px;
+}
+
+@media (max-width: 1200px) {
+  .cardWrapper {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .cardWrapper {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardWrapper {
+    column-count: 1;
+  }
+}
+
+.cardContainer {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 30px 30px 30px 15px;
+  width: 100%;
+  min-height: 5rem;
+  margin-bottom: 16px;
+  transition: transform 0.3s;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  break-inside: avoid;
+  display: inline-block;
+  position: relative;
+}
+
+.cardContainer:hover {
+  transform: scale(1.03);
+}
+
+.timeStamp {
+  position: absolute;
+  font-size: 8px;
+  bottom: -12px;
+  right: 12px;
+}
+
+.pinButton{
+  cursor: pointer;
+  position: absolute;
+  font-size: 12px;
+  font-weight: 600;
+  top: 5px;
+  left: 5px;
+}
+
+.pinButton:hover{
+  color: gray;
+}
+
+
+.cardContainer h2 {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.cardContent {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.editButton{
+  font-size: 25px;
+  position: absolute;
+  top: 1px;
+  right:45px;
+  cursor: pointer;
+}
+
+.editButton:hover{
+  color:green
+}
+
+.deletebutton {
+  color: #f5ba13;
+  font-size: 25px;
+  position: absolute;
+  right:10px;
+  top: 1px;
+  cursor: pointer;
+}
+.deletebutton:hover {
+  color: #e0ae23;
+}
+.deletebutton:active {
+  color: #977515;
+}
+
+.pendingTask{
+  font-size: 10px;
+  font-weight: 400;
+  font-family:'Times New Roman', Times, serif;
+  position: absolute;
+  bottom: -10px;
+  left: 5px;
+  cursor: pointer;
+}
