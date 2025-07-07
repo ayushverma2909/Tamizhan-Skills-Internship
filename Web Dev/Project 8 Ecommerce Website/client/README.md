@@ -1,12 +1,14 @@
-<img src="screenshots/screenshot1.png"/>
-<img src="screenshots/screenshot2.png"/>
-<img src="screenshots/screenshot3.png"/>
-<img src="screenshots/screenshot4.png"/>
-
 # 🛍️ React E-Commerce Website
 
 A fully functional and responsive **E-Commerce web application** built using **React** and **Tailwind CSS**, featuring a complete shopping experience — from product listing to wishlist, cart, billing, and search filtering.
 
+---
+## 🖼️ Screenshots
+
+<img src="screenshots/screenshot1.png" width="100%" />
+<img src="screenshots/screenshot2.png" width="100%" />
+<img src="screenshots/screenshot3.png" width="100%" />
+<img src="screenshots/screenshot4.png" width="100%" />
 ---
 
 ## 🚀 Features
