@@ -2,6 +2,7 @@
 
 A fully functional and responsive **E-Commerce web application** built using **React** and **Tailwind CSS**, featuring a complete shopping experience — from product listing to wishlist, cart, billing, and search filtering.
 
+[LIVE PREVIEW](https://e-commerce-website-uexg.onrender.com)
 ---
 ## 🖼️ Screenshots
 
