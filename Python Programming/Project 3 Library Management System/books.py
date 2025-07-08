@@ -55,7 +55,7 @@ class Books:
         data.update(new_book)
         with open(self.file_path, mode="w") as file:
             json.dump(data, file, indent=4)
-        print("✅ Book added successfully!")
+        print("Book added successfully!")
 
     def issue_books_to_students(self):
         self.student_id = int(input("Please Enter your student id: "))
@@ -166,13 +166,13 @@ class Books:
             print("No issued books found.")
             return
 
-        print("\n🧾 Issued Books List")
+        print("\nIssued Books List")
         for student in issued_data:
             print(f"\nStudent: {student['studentName']} (ID: {student['studentId']})")
             for book in student["issuedBooks"]:
                 fine = self.calculate_fine(book["issuedTime"])
                 issued_time = datetime.strptime(book["issuedTime"], "%Y-%m-%d %H:%M:%S")
-                print(f"  📖 {book['book']} - Issued on {issued_time.strftime('%d %b %Y %H:%M:%S')} - Fine: ₹{fine}")
+                print(f"{book['book']} - Issued on {issued_time.strftime('%d %b %Y %H:%M:%S')} - Fine: ₹{fine}")
 
     def pay_fine(self):
         student_id = int(input("Enter your student ID: "))
@@ -193,7 +193,7 @@ class Books:
                     total_fine += fine
 
                 if total_fine == 0:
-                    print("✅ You have no pending fine.")
+                    print("You have no pending fine.")
                     return
 
                 confirm = input(f"You have a fine of ₹{total_fine}. Pay now? (yes/no): ").lower()
@@ -202,11 +202,11 @@ class Books:
                         book["issuedTime"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     with open("issued_books.json", "w") as file:
                         json.dump(issued_data, file, indent=4)
-                    print("✅ Fine paid successfully. Timer reset.")
+                    print("Fine paid successfully. Timer reset.")
                 else:
                     print("Payment cancelled.")
                 return
-        print("❌ Student not found.")
+        print("Student not found.")
 
     def show_fine(self):
         student_id = int(input("Enter your student ID: "))
@@ -225,11 +225,11 @@ class Books:
                     fine = self.calculate_fine(book["issuedTime"])
                     total_fine += fine
                 if total_fine == 0:
-                    print("✅ You have no pending fine.")
+                    print("You have no pending fine.")
                 else:
-                    print(f"⚠️ You have a total fine of ₹{total_fine}. Please pay before returning books.")
+                    print(f"You have a total fine of ₹{total_fine}. Please pay before returning books.")
                 return
-        print("❌ Student not found.")
+        print("Student not found.")
 
     def remove_book(self):
         adminid = input("Please enter Admin id: ")
@@ -251,11 +251,11 @@ class Books:
                         del books_data[key]
                         with open(self.file_path, "w") as file:
                             json.dump(books_data, file, indent=4)
-                        print("✅ Book removed from library.")
+                        print("Book removed from library.")
                     else:
                         print("Cancelled.")
                     return
 
-            print("❌ Book not found in library.")
+            print("Book not found in library.")
         else:
             print("Invalid Admin credentials\nCannot remove the book")

@@ -61,3 +61,15 @@ Make Sure your current directory is
 cd "Web Dev/Project 5 Student Dashboard"
 npm install
 npm run dev
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](w).
+
+---
+
+## 🙋‍♂️ Author
+
+Made with ❤️ by [Ayush Verma](https://github.com/ayushverma2909)

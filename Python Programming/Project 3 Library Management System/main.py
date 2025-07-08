@@ -1,4 +1,3 @@
-# main.py
 import os
 from menu import Menu
 from books import Books

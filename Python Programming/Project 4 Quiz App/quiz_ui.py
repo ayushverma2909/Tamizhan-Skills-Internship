@@ -75,7 +75,7 @@ class QuizApp:
 
     def give_feedback(self, is_correct):
         color = "green" if is_correct else "red"
-        text = "✅ Correct!" if is_correct else "❌ Wrong!"
+        text = "Correct!" if is_correct else "Wrong!"
         self.feedback_label.config(text=text, fg=color)
 
         self.root.after(500, lambda: self.question_label.config(bg="SystemButtonFace"))

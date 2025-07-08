@@ -50,3 +50,32 @@ A fully functional and responsive **E-Commerce web application** built using **R
 - [LocalStorage API](w)
 
 ---
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone "https://github.com/ayushverma2909/Tamizhan-Skills-Internship.git"
+
+```
+Make Sure your current directory is
+<img src="screenshots/screenshot5.png">
+
+```bash
+
+cd "Web Dev/Project 8 Ecommerce Website"
+npm install
+npm run dev
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](w).
+
+---
+
+## 🙋‍♂️ Author
+
+Made with ❤️ by [Ayush Verma](https://github.com/ayushverma2909)
