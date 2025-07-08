@@ -22,7 +22,5 @@ A simple, lightweight, and fully responsive **Todo App** built with **React + Vi
 
 ## 📸 Screenshots
 
-
-```markdown
-![Todo App Screenshot - Light Mode](screenshots/screenshot1.png)
-![Todo App Screenshot - Mobile](screenshots/screenshot2.png)
+[Todo App Screenshot - Light Mode](screenshots/screenshot1.png)
+[Todo App Screenshot - Mobile](screenshots/screenshot2.png)
