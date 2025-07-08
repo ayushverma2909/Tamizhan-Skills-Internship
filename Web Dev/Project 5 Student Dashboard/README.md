@@ -1,12 +1,63 @@
-# React + Vite
+# 🎓 Student Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **responsive**, **feature-rich**, and **visually intuitive** Student Management Dashboard built with **React (Vite)** and **Tailwind CSS**. It allows easy handling of student data with full **CRUD operations**, **search**, **pagination**, and **graphical analysis** using **Chart.js**.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📊 **Graphical Representation** of student performance using [Chart.js](w)
+- 🧑‍🎓 **Student Cards** to showcase individual student data
+- 📋 **Interactive Table** view for easy bulk management
+- 🔍 **Search Functionality** by Name or Registration Number
+- 🛠️ **Full CRUD Support** (Add, Edit, Delete, View)
+- 📱 **Fully Responsive UI** optimized for all devices
+- 💡 **Clean UI/UX** using [Tailwind CSS](w)
+- 📄 **Pagination** support for managing large datasets
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📷 Screenshots
+
+> Replace the image URLs below with your actual hosted screenshots.
+
+### 🔹 Dashboard Overview
+![Dashboard Screenshot](screenshots/screenshot1.png)
+
+### 🔹 Student Cards
+![Student Cards Screenshot](screenshots/screenshot3.png)
+
+### 🔹 Graphical Report
+![Student Infromation](screenshots/screenshot2.png)
+
+---
+
+## 🔗 Live Demo
+
+👉 [Click here to view the live demo](https://your-demo-link.com)  
+
+---
+
+## 🧱 Tech Stack
+
+- ⚛️ [React](w) (with [Vite](w) for fast dev)
+- 🎨 [Tailwind CSS](w)
+- 📊 [Chart.js](w)
+- 🔍 JavaScript (ES6+)
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone "https://github.com/ayushverma2909/Tamizhan-Skills-Internship.git"
+
+```
+Make Sure your current directory is
+<img src="screenshots/screenshot4.png">
+
+```bash
+
+cd "Web Dev/Project 5 Student Dashboard"
+npm install
+npm run dev

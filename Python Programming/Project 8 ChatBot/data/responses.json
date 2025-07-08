@@ -1,0 +1,23 @@
+{
+  "greeting": "Hello! Welcome to Tamizhan Skills. How can I help you today?",
+  "courses": " Tamizhan Skills offers Web Development, Python, Full Stack, Cybersecurity, AI, and more. We also provide 1-month mini-courses with internship-level projects.",
+  "fees": "Our course fees are affordable — starting from ₹1,999. Some advanced certifications may cost more.",
+  "duration": "Courses usually range from 4 to 12 weeks, depending on the track. Mini-courses are often 1 month long.",
+  "instructors": "Our trainers are experienced professionals from the tech and education industry.",
+  "placement": "We offer placement support after course completion, including internship opportunities and resume building.",
+  "free_training": "We offer 100% free training for transgender and differently-abled individuals. Inclusive education matters.",
+  "competitive": "Yes! We offer live and recorded training for competitive exams like SSC, JEE, NEET, TNPSC, RRB, and more.",
+  "certificates": "You receive verifiable certificates upon completion, supported by Wipro DICE-ID.",
+  "credential": "We are credential partners with Wipro DICE-ID, so your certificates can be verified for credibility.",
+  "contact": "You can reach us at contact@tamizhanskills.com or call +91-63834-18100 / +91-80725-01431.",
+  "whatsapp": "You can also message us on WhatsApp using +91-6383418100.",
+  "website": "Visit our official website at https://www.tamizhanskills.com for more info and enrollment.",
+  "enroll": "To enroll, go to our website > select a course > click Register and follow the steps.",
+  "location": "We're based in Tamil Nadu but offer **online courses** you can join from anywhere in India.",
+  "timing": "Course timings are flexible, including evening and weekend batches.",
+  "languages": "Courses are available in Tamil and English depending on the batch and trainer.",
+  "demo": "We provide demo sessions for selected courses. Reach out to request a demo.",
+  "support": "We're here to help! Ask us about courses, fees, certification, or training support.",
+  "exit": "Thanks for visiting Tamizhan Skills. Have a great day!",
+  "unknown": "I'm not sure how to answer that. Please try asking about our courses, fees, certification, or contact info."
+}

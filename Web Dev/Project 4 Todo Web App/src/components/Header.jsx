@@ -15,7 +15,7 @@ const Header = ({ filter, setFilter }) => {
   return <>
     <div className='header'>
 
-      <h1 >Todo App</h1>
+      <h1 >To-Do </h1>
       <div className='selectTask'>
         <FormControl sx={{ m: 1, minWidth: 80}}>
           <InputLabel >Tasks</InputLabel>

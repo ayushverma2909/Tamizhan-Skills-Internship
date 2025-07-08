@@ -10,11 +10,11 @@ const StudentTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const studentsPerPage = 10;
 
-  const filtered = students.filter((s) =>
-    s.name.toLowerCase().includes(search.toLowerCase()) ||
-    s.Department.toLowerCase().includes(search.toLowerCase()) ||
-    s["Reg.no"].toString().includes(search)
+  const filtered = (students || []).filter((s) =>
+    (s.name || "").toLowerCase().includes(search.toLowerCase()) ||
+    s["Reg.no"]?.toString().includes(search)
   );
+
 
   const indexOfLast = currentPage * studentsPerPage;
   const indexOfFirst = indexOfLast - studentsPerPage;
