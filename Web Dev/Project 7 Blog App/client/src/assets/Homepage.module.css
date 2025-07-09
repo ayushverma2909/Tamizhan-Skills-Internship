@@ -1,0 +1,47 @@
+/* components/Welcome.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e0f7fa, #fce4ec);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1976d2;
+}
+
+.card p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.info {
+  margin-top: 1.5rem;
+  background: #f1f8e9;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #33691e;
+}
+
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #999;
+}

@@ -1,0 +1,183 @@
+/* Container centered vertically, smaller, no vertical scroll */
+.container {
+  max-width: 520px;
+  max-height: 85vh;
+  margin: auto;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.07),
+    0 2px 5px rgba(0, 0, 0, 0.04);
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+.inputArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Scroll only inside textarea */
+.textarea {
+  min-height: 120px;
+  max-height: 120px;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+/* Smaller heading */
+h2 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+/* Back button small and subtle */
+.backButton {
+  background: none;
+  border: none;
+  color: #5c57d8;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.backButton:hover {
+  color: #3a36a3;
+  text-decoration: underline;
+}
+
+/* Inputs smaller padding and font */
+.input,
+.textarea {
+  width: 80%;
+  border-radius: 12px;
+  border: 1.8px solid #ccc;
+  background: #fafaff;
+  font-size: 0.9rem;
+  color: #444;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.25s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #5c57d8;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 8px #5c57d855;
+}
+
+/* Buttons smaller and inline */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: auto; /* push to bottom */
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  padding: 0.5rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 24px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+  box-shadow: 0 5px 15px rgba(92, 87, 216, 0.2);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.buttonPrimary {
+  background: #5c57d8;
+  color: white;
+}
+
+.buttonPrimary:hover:not(:disabled) {
+  background: #3a36a3;
+  box-shadow: 0 8px 25px rgba(58, 54, 163, 0.45);
+}
+
+.buttonPrimary:disabled {
+  background: #a3a0e9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.buttonSecondary {
+  background: #e6e5ff;
+  color: #5c57d8;
+  box-shadow: 0 4px 12px rgba(92, 87, 216, 0.15);
+}
+
+.buttonSecondary:hover:not(:disabled) {
+  background: #cfcfff;
+  box-shadow: 0 7px 20px rgba(92, 87, 216, 0.3);
+}
+
+.buttonSecondary:disabled {
+  background: #d9d9f7;
+  color: #9999cc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Toast smaller and subtle */
+.toast {
+  background-color: #5c57d8;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(92, 87, 216, 0.35);
+  user-select: none;
+  letter-spacing: 0.02em;
+  animation: fadein 0.3s ease;
+}
+
+@keyframes fadein {
+  from {opacity: 0; transform: translateY(-5px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Saving text */
+.saving {
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: #5c57d8;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  align-self: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    max-width: 90vw;
+    padding: 1.2rem 1.5rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+  
+  .buttonPrimary,
+  .buttonSecondary {
+    width: 100%;
+  }
+}

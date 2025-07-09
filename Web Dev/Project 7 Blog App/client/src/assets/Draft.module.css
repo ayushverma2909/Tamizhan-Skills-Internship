@@ -1,0 +1,127 @@
+.container {
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.goBackButton {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.goBackButton:hover {
+  background-color: #5a6268;
+}
+
+.error {
+  color: #dc3545;
+  margin-top: 1rem;
+}
+
+.message {
+  color: #6c757d;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background-color: #fff7f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(180, 90, 100, 0.15);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: box-shadow 0.3s ease;
+  border: 1.5px solid #f1c0c6;
+}
+
+.card:hover {
+  box-shadow: 0 7px 20px rgba(180, 90, 100, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #a8323e;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.status {
+  color: #b33951;
+}
+
+.tags {
+  color: #7f2a3a;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem 0;
+  color: #8a2031;
+  flex-grow: 0;
+}
+
+.content {
+  font-size: 1rem;
+  color: #5e2a37;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #9a5360;
+  margin-bottom: 0.75rem;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.editButton {
+  align-self: flex-end;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: #9f224a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

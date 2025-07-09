@@ -1,0 +1,159 @@
+/* Container - slightly narrower and shorter than NewPost */
+.container {
+  max-width: 480px;
+  max-height: 75vh;
+  margin: auto;
+  padding: 1.2rem 1.8rem;
+  background: #f7f9fc;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Header */
+h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  color: #1c1c1c;
+  user-select: text;
+}
+
+/* Back button - subtle gray with underline on hover */
+.button {
+  background: none;
+  border: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  padding: 0;
+  transition: color 0.25s ease;
+  user-select: none;
+}
+
+.button:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+/* Toast message - soft red */
+.toast {
+  background-color: #f9d6d5;
+  color: #b02a28;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(176, 42, 40, 0.3);
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Inputs & textarea - cleaner with slight border radius */
+
+.inputArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input,
+.textarea {
+  width: 80%;
+  border-radius: 10px;
+  border: 1.5px solid #bbb;
+  background: white;
+  font-size: 0.9rem;
+  color: #333;
+  padding: 0.5rem 0.9rem;
+  margin-bottom: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: border-color 0.25s ease;
+  resize: none;
+  user-select: text;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #4682b4;
+  outline: none;
+  box-shadow: 0 0 6px #4682b480;
+  background: #fefefe;
+}
+
+/* Textarea fixed height with internal scroll */
+.textarea {
+  min-height: 100px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto; /* push to bottom */
+}
+
+/* Primary button with soft blue */
+.buttonPrimary {
+  padding: 0.5rem 1.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  background: #4682b4;
+  color: white;
+  box-shadow: 0 4px 15px rgba(70, 130, 180, 0.25);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.buttonPrimary:hover {
+  background: #2a5d8f;
+  box-shadow: 0 7px 22px rgba(42, 93, 143, 0.45);
+}
+
+.buttonPrimary:disabled {
+  background: #a0b9d6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Loading text style */
+.loadingText {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
+  font-weight: 500;
+  text-align: center;
+  user-select: none;
+}
+
+/* Responsive: full width container on mobile */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95vw;
+    padding: 1rem 1.2rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .buttonPrimary {
+    width: 100%;
+  }
+}

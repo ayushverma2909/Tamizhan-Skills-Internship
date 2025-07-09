@@ -1,0 +1,151 @@
+body{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.header {
+  color: #34495e;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 2.2rem;
+}
+
+.noteContainer {
+    column-count: 3;
+    column-gap: 1.5rem;
+    padding: 2rem;
+}
+
+.create-post-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.create-post-btn:hover {
+  background-color: #219150;
+}
+
+  
+  .noteCard {
+    display: inline-block;
+    width: 100%; /* critical: let browser handle width inside column */
+    margin-bottom: 1.5rem;
+    background: #dfd9d9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    break-inside: avoid;
+    box-sizing: border-box;
+  }
+  
+  
+
+  .handlesession{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 20px;
+  }
+
+  .logout {
+    background-color: #c0392b;
+    color: white;
+    margin-left: 1rem;
+  }
+  .logout:hover {
+    background-color: #a93226;
+  }
+
+  .noteTitle{
+    color: #2c3e50;
+  }
+
+  .noteMeta{
+    font-family: cursive;
+    color: #7f8c8d;
+  }
+
+  .noteContent{
+    color: #2d3436;
+    font-size: 1.5rem;
+  }
+
+  .delete-form{
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+  }
+  .navigationLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 1rem 0;
+}
+
+.navLink {
+  background-color: #27ae60;
+  color: white;
+  padding: 8px 18px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: #219150;
+}
+
+.noteStatus {
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font-family: cursive;
+  color: #555;
+}
+
+.published {
+  color: #27ae60;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.draft {
+  color: #c0392b;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.25rem;
+}
+
+
+  .delete-btn{
+    background-color: red;
+  }
+  
+@media (max-width: 1024px) {
+  .noteContainer {
+    column-count: 2;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .noteContainer {
+    width: 70%;
+    margin: 0 auto;
+    column-count: 1;
+    padding: 1rem;
+  }
+ 
+}
+
+
+  
