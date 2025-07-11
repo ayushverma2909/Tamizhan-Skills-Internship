@@ -97,9 +97,9 @@ const FeaturedCard = ({ id,image, name, company, price, originalPrice, discountP
 
           <button
             
-            className={`flex items-center justify-center gap-1 text-black text-sm sm:text-md px-2 sm:px-3 py-2 rounded-sm whitespace-nowrap cursor-pointer`}
+            className={`flex items-center justify-center gap-1 text-black text-[10px] sm:text-md px-2 sm:px-3 py-2 rounded-sm whitespace-nowrap cursor-pointer`}
           >
-            <FaShoppingCart className="text-sm" />
+            <FaShoppingCart className="text-[10px] sm:text-sm flex justify-center items-center " />
             {isAddToCart ? 'REMOVE FROM CART' : 'ADD TO CART'}
           </button>
         </div>
